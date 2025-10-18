@@ -1,0 +1,144 @@
+/* Global fix: Prevents layout overflow */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🧭 Navbar Base */
+.navbar-3d {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 2vw; /* Responsive padding */
+
+  /* 🎨 Updated Government-Style Gradient */
+  background: linear-gradient(90deg, #002147 0%, #003366 40%, #00509e 100%);
+  backdrop-filter: blur(10px);
+
+  /* Elegant depth */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  border-bottom: 3px solid #f7931d; /* saffron accent line */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* 🔰 Logo Section */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+
+.nav-logo img {
+  width: clamp(40px, 5vw, 55px);
+  height: clamp(40px, 5vw, 55px);
+  border-radius: 50%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.nav-logo span {
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+
+/* 🌈 Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 25px);
+}
+
+.nav-links li {
+  perspective: 600px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  display: inline-block;
+}
+
+/* 🌀 Hover Effect */
+.nav-links a:hover {
+  transform: translateY(-3px) rotateX(6deg);
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 15px rgba(255, 255, 255, 0.25),
+    0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* 🟠 Login Button (Saffron Accent) */
+.login-btn {
+  background: linear-gradient(90deg, #f6b343, #f7931d);
+  color: #1a1a1a;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 5px 10px rgba(255, 180, 60, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn:hover {
+  transform: translateY(-6px) rotateX(8deg);
+  background: linear-gradient(90deg, #ffcc66, #f7931d);
+  box-shadow:
+    0 12px 25px rgba(255, 180, 50, 0.5),
+    0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* 📱 Responsive Navbar */
+@media (max-width: 850px) {
+  .navbar-3d {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .nav-logo {
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-links a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .nav-logo span {
+    font-size: 1rem;
+  }
+}
