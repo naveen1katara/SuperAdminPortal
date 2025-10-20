@@ -1,28 +1,28 @@
-.login-page {
+.register-page {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
   font-family: "Poppins", sans-serif;
 }
 
-.login-box {
+.register-box {
   background: #fff;
   padding: 2.5rem;
   border-radius: 15px;
-  width: 350px;
+  width: 370px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
 
-.login-title {
+.register-title {
   font-size: 24px;
   font-weight: 600;
   color: #333;
 }
 
-.login-subtitle {
+.register-subtitle {
   color: #666;
   font-size: 14px;
   margin-bottom: 1.5rem;
@@ -50,12 +50,12 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #6a11cb;
+  border-color: #ff416c;
 }
 
-.login-btn {
+.register-btn {
   width: 100%;
-  background-color: #6a11cb;
+  background-color: #ff416c;
   color: white;
   border: none;
   padding: 10px;
@@ -66,27 +66,33 @@ input:focus {
   transition: 0.3s;
 }
 
-.login-btn:hover {
-  background-color: #2575fc;
+.register-btn:hover {
+  background-color: #ff4b2b;
 }
 
-.signup-text {
+.login-text {
   font-size: 13px;
   color: #555;
   margin-top: 1rem;
 }
 
-.signup-text a {
-  color: #6a11cb;
+.login-text a {
+  color: #ff416c;
   text-decoration: none;
 }
 
-.signup-text a:hover {
+.login-text a:hover {
   text-decoration: underline;
 }
 
 .error-message {
   color: #ff4d4d;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #28a745;
   font-size: 13px;
   margin-bottom: 10px;
 }

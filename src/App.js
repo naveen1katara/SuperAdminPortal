@@ -8,6 +8,7 @@ import Login from "./Routes/Login";
 import ComplaintBox from "./Routes/ComplaintBox";
 import Workers from "./Routes/Workers";
 import Employer from "./Routes/Employer";
+import Register from "./Routes/Register";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/employers" element={<Employer />} />
           <Route path="/login" element={<Login />} />
           <Route path="/complaint" element={<ComplaintBox />} />
+          <Route path="/register" element={<Register/>} />
         </Routes>
       </div>
     </Router>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Routes/Employer.css";
 
 function Employer() {
-  // Sample Employer Data (with workers)
+  // Employer Data with workers and previous companies
   const [employers] = useState([
     {
       id: 1,
@@ -11,6 +11,7 @@ function Employer() {
       contact: "+91 9876543210",
       company: "Skyline Builders",
       address: "Bhopal, Madhya Pradesh",
+      previousCompanies: ["Dream Constructions", "Metro Developers"],
       workers: [
         { id: 1, name: "Amit Kumar", contact: "+91 9090909090" },
         { id: 2, name: "Ravi Singh", contact: "+91 9988776655" },
@@ -23,6 +24,7 @@ function Employer() {
       contact: "+91 9988776655",
       company: "GreenLand Contractors",
       address: "Indore, Madhya Pradesh",
+      previousCompanies: ["Eco Builders", "Shree Constructions"],
       workers: [
         { id: 3, name: "Sneha Verma", contact: "+91 9001122334" },
         { id: 4, name: "Rohit Mehta", contact: "+91 8776655443" },
@@ -35,6 +37,7 @@ function Employer() {
       contact: "+91 9090909090",
       company: "Patel Infrastructure",
       address: "Ujjain, Madhya Pradesh",
+      previousCompanies: ["Urban Developers", "Future Infra Ltd."],
       workers: [
         { id: 5, name: "Neha Gupta", contact: "+91 7001234567" },
         { id: 6, name: "Vikram Chauhan", contact: "+91 8112233445" },
@@ -45,9 +48,11 @@ function Employer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedEmployer, setSelectedEmployer] = useState(null);
 
-  // Filter based on search term
-  const filteredEmployers = employers.filter((emp) =>
-    emp.name.toLowerCase().includes(searchTerm.toLowerCase())
+  // 🔍 Filter by employer name OR company name
+  const filteredEmployers = employers.filter(
+    (emp) =>
+      emp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      emp.company.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -60,17 +65,17 @@ function Employer() {
               View, Search, and Manage Employer Profiles
             </p>
 
-            {/* Search */}
+            {/* Search Bar */}
             <div className="search-box">
               <input
                 type="text"
-                placeholder="Search employer by name..."
+                placeholder="Search by employer or company name..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
 
-            {/* Employer List Table */}
+            {/* Employer List */}
             <table className="employer-table">
               <thead>
                 <tr>
@@ -109,29 +114,33 @@ function Employer() {
           </>
         ) : (
           <>
-            {/* Employer Profile Section */}
-            <button
-              className="back-btn"
-              onClick={() => setSelectedEmployer(null)}
-            >
+            {/* Employer Profile View */}
+            <button className="back-btn" onClick={() => setSelectedEmployer(null)}>
               ← Back
             </button>
 
             <div className="profile-section">
               <h2>{selectedEmployer.name}</h2>
-              <p>
-                <strong>Email:</strong> {selectedEmployer.email}
-              </p>
-              <p>
-                <strong>Contact:</strong> {selectedEmployer.contact}
-              </p>
-              <p>
-                <strong>Company:</strong> {selectedEmployer.company}
-              </p>
-              <p>
-                <strong>Address:</strong> {selectedEmployer.address}
-              </p>
+              <p><strong>Email:</strong> {selectedEmployer.email}</p>
+              <p><strong>Contact:</strong> {selectedEmployer.contact}</p>
+              <p><strong>Current Company:</strong> {selectedEmployer.company}</p>
+              <p><strong>Address:</strong> {selectedEmployer.address}</p>
 
+              {/* Previous Companies */}
+              <div className="previous-section">
+                <h3>Previous Companies:</h3>
+                {selectedEmployer.previousCompanies && selectedEmployer.previousCompanies.length > 0 ? (
+                  <ul className="previous-list">
+                    {selectedEmployer.previousCompanies.map((comp, index) => (
+                      <li key={index}>{comp}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>No previous company records available.</p>
+                )}
+              </div>
+
+              {/* Workers List */}
               <h3 className="worker-heading">Workers under this employer:</h3>
               <table className="workers-table">
                 <thead>

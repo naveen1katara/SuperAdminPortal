@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import '../Routes/Login.css';
-
+import "../Routes/Login.css";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -12,19 +11,26 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.email || !formData.password) {
-      setError("Please fill out all fields");
+    const storedAdmin = JSON.parse(localStorage.getItem("superAdmin"));
+
+    if (!storedAdmin) {
+      setError("No Super Admin registered. Please register first!");
       return;
     }
-    setError("");
-    alert("Login Successful!");
+
+    if (formData.email === storedAdmin.email && formData.password === storedAdmin.password) {
+      setError("");
+      alert(`Welcome back, ${storedAdmin.name}! Login Successful ✅`);
+    } else {
+      setError("Invalid email or password");
+    }
   };
 
   return (
     <div className="login-page">
       <div className="login-box">
         <h2 className="login-title">Welcome Back 👋</h2>
-        <p className="login-subtitle">Please log in to continue</p>
+        <p className="login-subtitle">Super Admin Login</p>
 
         {error && <p className="error-message">{error}</p>}
 
@@ -57,7 +63,7 @@ function Login() {
         </form>
 
         <p className="signup-text">
-          Don’t have an account? <a href="/signup">Sign up</a>
+          No account yet? <a href="/register">Register</a>
         </p>
       </div>
     </div>

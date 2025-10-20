@@ -1,158 +1,142 @@
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f4f6fa;
-}
-
 .employer-page {
-  display: flex;
-  justify-content: center;
   min-height: 100vh;
-  padding: 40px 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  padding: 30px;
 }
 
 .employer-container {
-  background-color: #fff;
+  background: white;
   width: 90%;
-  max-width: 950px;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Headings */
 .employer-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2c3e50;
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
   text-align: center;
-  margin-bottom: 0.4rem;
 }
 
 .employer-subtitle {
   text-align: center;
   color: #666;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Search Box */
 .search-box {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-bottom: 1.5rem;
 }
 
 .search-box input {
   width: 60%;
-  max-width: 350px;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
-  font-size: 0.95rem;
-  outline: none;
-  transition: 0.3s;
+  border-radius: 10px;
+  font-size: 14px;
 }
 
-.search-box input:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-}
-
-/* Employer Table */
 .employer-table {
   width: 100%;
   border-collapse: collapse;
+  text-align: left;
+}
+
+.employer-table th,
+.employer-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
 }
 
 .employer-table th {
-  background-color: #4a90e2;
-  color: white;
-  padding: 12px;
+  background: #f2f2f2;
   font-weight: 600;
-}
-
-.employer-table td {
-  padding: 12px;
-  border-bottom: 1px solid #eee;
-}
-
-.employer-table tr:hover {
-  background-color: #eef6ff;
 }
 
 .clickable {
-  color: #007bff;
+  color: #2575fc;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .clickable:hover {
   text-decoration: underline;
 }
 
-/* Profile Section */
+.no-data {
+  text-align: center;
+  color: #777;
+  padding: 20px 0;
+}
+
+.back-btn {
+  background-color: #2575fc;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background-color: #6a11cb;
+}
+
 .profile-section {
-  margin-top: 1rem;
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .profile-section h2 {
-  color: #2c3e50;
-  margin-bottom: 0.6rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.profile-section p {
-  font-size: 0.95rem;
-  color: #444;
-  margin: 4px 0;
+.previous-section {
+  margin: 20px 0;
 }
 
-/* Workers under employer */
+.previous-section h3 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.previous-list {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #555;
+}
+
 .worker-heading {
-  margin-top: 1.8rem;
-  color: #2c3e50;
+  margin-top: 20px;
+  color: #333;
+  font-weight: 600;
 }
 
 .workers-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 0.5rem;
+  margin-top: 10px;
+}
+
+.workers-table th,
+.workers-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .workers-table th {
-  background-color: #3ca84d;
-  color: white;
-  padding: 10px;
-}
-
-.workers-table td {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.workers-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Back Button */
-.back-btn {
-  background-color: #4a90e2;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.back-btn:hover {
-  background-color: #357abd;
-}
-
-/* No Data */
-.no-data {
-  text-align: center;
-  color: #999;
-  padding: 20px;
-  font-style: italic;
+  background: #f4f4f4;
+  font-weight: 600;
 }

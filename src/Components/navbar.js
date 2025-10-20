@@ -16,7 +16,8 @@ function Navbar() {
         <li><Link to="/workers">Workers</Link></li>
         <li><Link to="/complaint">Complaint Box</Link></li>
         <li><Link to="/employers">Employer</Link></li>
-        <li><Link to="/login" className="login-btn">Login</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        {/* <li><Link to="/register">Register</Link></li> */}
       </ul>
     </nav>
   );
